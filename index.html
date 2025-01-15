@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuildRight Homes | Professional Residential Construction</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        :root {
+            --primary: #2C5282;
+            --secondary: #F6AD55;
+            --text: #2D3748;
+            --light: #EDF2F7;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat Alternates', sans-serif;
+        }
+
+        .hero-pattern {
+            background-color: #2C5282;
+            background-image: linear-gradient(rgba(44, 82, 130, 0.95), rgba(44, 82, 130, 0.95)), url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+
+        .socials {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .socials li {
+            list-style: none;
+        }
+
+        .socials li a {
+            display: block;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: #404040;
+            margin: 0 10px;
+            transition: .5s;
+        }
+
+        .socials li a span {
+            position: absolute;
+            transition: transform .5s;
+        }
+
+        .socials li a span:nth-child(1),
+        .socials li a span:nth-child(3) {
+            width: 100%;
+            height: 3px;
+            background: #404040;
+        }
+
+        .socials li a span:nth-child(1) {
+            top: 0;
+            left: 0;
+            transform-origin: right;
+        }
+
+        .socials li a:hover span:nth-child(1) {
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .5s;
+        }
+
+        .socials li a span:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            transform-origin: left;
+        }
+
+        .socials li a:hover span:nth-child(3) {
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform .5s;
+        }
+
+        .socials li a span:nth-child(2),
+        .socials li a span:nth-child(4) {
+            width: 3px;
+            height: 100%;
+            background: #404040;
+        }
+
+        .socials li a span:nth-child(2) {
+            top: 0;
+            left: 0;
+            transform: scale(0);
+            transform-origin: bottom;
+        }
+
+        .socials li a:hover span:nth-child(2) {
+            transform: scale(1);
+            transform-origin: top;
+            transition: transform .5s;
+        }
+
+        .socials li a span:nth-child(4) {
+            top: 0;
+            right: 0;
+            transform: scale(0);
+            transform-origin: top;
+        }
+
+        .socials li a:hover span:nth-child(4) {
+            transform: scale(1);
+            transform-origin: bottom;
+            transition: transform .5s;
+        }
+
+        .facebook:hover {
+            color: #3b5998;
+        }
+
+        .facebook:hover span {
+            background: #3b5998;
+        }
+
+        .twitter:hover {
+            color: #1da1f2;
+        }
+
+        .twitter:hover span {
+            background: #1da1f2;
+        }
+
+        .instagram:hover {
+            color: #c32aa3;
+        }
+
+        .instagram:hover span {
+            background: #c32aa3;
+        }
+
+        .google:hover {
+            color: #dd4b39;
+        }
+
+        .google:hover span {
+            background: #dd4b39;
+        }
+
+        ul li a .twitter {
+            color: #1da1f2;
+        }
+
+        ul li a:hover:nth-child(3) {
+            color: #c32aa3;
+        }
+
+        ul li a:hover:nth-child(4) {
+            color: #dd4b39;
+        }
+
+        .nav-link {
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #031D44;
+            padding: 20px 0px;
+            margin: 0px 20px;
+            display: inline-block;
+            position: relative;
+            opacity: 0.75;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .nav-link::before {
+            transition: 300ms;
+            height: 5px;
+            content: "";
+            position: absolute;
+            background-color: #031D44;
+            width: 0%;
+            bottom: 10px;
+        }
+
+        .nav-link:hover::before {
+            width: 110%;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-primary">HMT I VÄST / LOGGA</span>
+                </div>
+                <div>
+                    <ul class="socials">
+                        <li>
+                            <a class="facebook" href="#">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i class="fa fa-facebook" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="twitter" href="#">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i class="fa fa-twitter" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="instagram" href="#">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i class="fa fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 nav-links">
+                    <a href="#home" class="nav-link text-black-700 hover:text-primary">Hem</a>
+                    <a href="#services" class="nav-link text-black-700 hover:text-primary">Tjänster</a>
+                    <a href="#about" class="nav-link text-black-700 hover:text-primary">Om oss</a>
+                    <a href="#contact"
+                        class="nav-link bg-primary text-gray-700 px-4 py-2 rounded-md">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-pattern min-h-screen flex items-center text-white pt-16">
+        <div class="max-w-7xl mx-auto px-4 py-20">
+            <div class="md:w-2/3">
+                <h1 class="text-5xl font-bold mb-6">Något klyftigt möjligtvis</h1>
+                <p class="text-xl mb-8">Professionella bostadsbyggande tjänster med fokus på kvalitet, pålitlighet och
+                    kundnöjdhet.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact"
+                        class="bg-secondary text-gray-800 px-8 py-3 rounded-md font-semibold hover:bg-orange-400">Få en
+                        gratis offert</a>
+                    <a href="#services"
+                        class="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-primary">Våra
+                        tjänster</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Våra tjänster</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <img src="/api/placeholder/400/300" alt="New Construction"
+                        class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold mb-2">Kanske en tjänst</h3>
+                    <p class="text-gray-600 mb-4">Kanske lite välformulerad information om tjänsten i fråga möjligtvis.
+                    </p>
+                    <a href="#contact" class="text-primary font-semibold hover:text-blue-700">Läs mer →</a>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <img src="/api/placeholder/400/300" alt="Renovations"
+                        class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold mb-2">Kanske en andra tjänst</h3>
+                    <p class="text-gray-600 mb-4">Kanske lite mer välformulerad information om en andra tjänst
+                        möjligtvis.</p>
+                    <a href="#contact" class="text-primary font-semibold hover:text-blue-700">Läs mer →</a>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <img src="/api/placeholder/400/300" alt="Additions"
+                        class="w-full h-48 object-cover rounded-md mb-4">
+                    <h3 class="text-xl font-bold mb-2">Kanske en tredje tjänst</h3>
+                    <p class="text-gray-600 mb-4">Möjligtvis lite ytterligare välformulerad information om en tredje
+                        tjänst?</p>
+                    <a href="#contact" class="text-primary font-semibold hover:text-blue-700">Läs mer →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="/api/placeholder/600/400" alt="Om oss" class="rounded-lg shadow-xl">
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">400 år av excellens inom marktjänst</h2>
+                    <p class="text-gray-600 mb-6">Något kanske HMTIVÄST har marktjänstat sedan 1620 blabla och levererat
+                        exceptionell kvalitet och kundservice i varje projekt vi genomfört.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                            </svg>
+                            Licensierade och försäkrade proffs
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                            </svg>
+                            5-års utförandegaranti
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-6 h-6 text-secondary mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                            </svg>
+                            Prisbelönta mönster
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Kontakta oss</h2>
+                    <p class="text-gray-600 mb-8">Redo att starta ditt projekt? Kontakta oss för en kostnadsfri
+                        konsultation och offert.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-primary mr-4" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>+46 71 011 9703</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-6 h-6 text-primary mr-4" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>Info@hmtivast.se</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="name">Namn</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2" for="email">Epost</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-2" for="service">Önskad tjänst</label>
+                            <select id="service"
+                                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                                <option>Första tjänst</option>
+                                <option>Andra tjänst</option>
+                                <option>Tredje tjänst</option>
+                                <option>Annat ?? </option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 mb-2" for="message">Meddelande</label>
+                            <textarea id="message" rows="4"
+                                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-primary text-white py-3 rounded-md font-semibold hover:bg-blue-700">Skicka
+                            meddelande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">HMTIVÄST</h3>
+                    <p class="text-gray-400">Kanske en slogan - Haklaj Marktjänst i Väst – Vi tar hand om grunden, du
+                        skördar framgången..</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Snabblänkar</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Hem</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white">Tjänster</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">Om oss</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Kontakta oss</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Kontaktinformation</h4>
+                    <address class="text-gray-400 not-italic">
+                        Address 11b<br>
+                        Göteborg, 12345<br>
+                        +4672 911 9703<br>
+                        info@hmtivast.se
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Haklaj Marktjänst I Väst. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
