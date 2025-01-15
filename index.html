@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuildRight Homes | Professional Residential Construction</title>
+    <title>HMT I VÄST</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -34,7 +34,7 @@
             transition: transform 0.3s ease;
         }
 
-
+        /* Original social media styles */
         .socials {
             position: absolute;
             top: 50%;
@@ -206,6 +206,82 @@
         .nav-link:hover::before {
             width: 110%;
         }
+
+        /* New mobile menu styles */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            background: white;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 50;
+            padding-top: 4rem;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out;
+            z-index: 40;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu-social {
+            padding: 1rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 1rem;
+        }
+
+        .mobile-menu-social h3 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-menu-social-icons {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0 1rem;
+        }
+
+        .mobile-menu-button {
+            padding: 0.5rem;
+            cursor: pointer;
+            z-index: 60;
+        }
+
+        @media (min-width: 768px) {
+            .mobile-menu,
+            .mobile-menu-button,
+            .mobile-overlay {
+                display: none;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .socials {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -215,9 +291,18 @@
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <span class="text-2xl font-bold text-primary">HMT I VÄST / LOGGA</span>
+                    <span class="text-xl md:text-2xl font-bold text-primary">HMT I VÄST / LOGGA</span>
                 </div>
-                <div>
+
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-button md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <!-- Desktop Social Icons -->
+                <div class="hidden md:block">
                     <ul class="socials">
                         <li>
                             <a class="facebook" href="#">
@@ -248,30 +333,58 @@
                         </li>
                     </ul>
                 </div>
+
+                <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8 nav-links">
                     <a href="#home" class="nav-link text-black-700 hover:text-primary">Hem</a>
                     <a href="#services" class="nav-link text-black-700 hover:text-primary">Tjänster</a>
                     <a href="#about" class="nav-link text-black-700 hover:text-primary">Om oss</a>
-                    <a href="#contact"
-                        class="nav-link bg-primary text-gray-700 px-4 py-2 rounded-md">Kontakt</a>
+                    <a href="#contact" class="nav-link bg-primary text-gray-700 px-4 py-2 rounded-md">Kontakt</a>
                 </div>
             </div>
         </div>
+
+        <!-- Mobile menu panel -->
+        <div class="mobile-menu">
+            <a href="#home" class="block py-2 px-4 text-sm hover:bg-gray-100">Hem</a>
+            <a href="#services" class="block py-2 px-4 text-sm hover:bg-gray-100">Tjänster</a>
+            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-100">Om oss</a>
+            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-100">Kontakt</a>
+            
+            <!-- Mobile Social Links -->
+            <div class="mobile-menu-social">
+                <h3>Följ oss</h3>
+                <div class="mobile-menu-social-icons">
+                    <a href="#" class="text-blue-600 hover:text-blue-800">
+                        <i class="fa fa-facebook fa-lg"></i>
+                    </a>
+                    <a href="#" class="text-blue-400 hover:text-blue-600">
+                        <i class="fa fa-twitter fa-lg"></i>
+                    </a>
+                    <a href="#" class="text-pink-600 hover:text-pink-800">
+                        <i class="fa fa-instagram fa-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Overlay for mobile menu -->
+        <div class="mobile-overlay"></div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero-pattern min-h-screen flex items-center text-white pt-16">
         <div class="max-w-7xl mx-auto px-4 py-20">
             <div class="md:w-2/3">
-                <h1 class="text-5xl font-bold mb-6">Något klyftigt möjligtvis</h1>
+                <h1 class="text-3xl md:text-5xl font-bold mb-6">Något klyftigt möjligtvis</h1>
                 <p class="text-xl mb-8">Professionella bostadsbyggande tjänster med fokus på kvalitet, pålitlighet och
                     kundnöjdhet.</p>
-                <div class="flex space-x-4">
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
                     <a href="#contact"
-                        class="bg-secondary text-gray-800 px-8 py-3 rounded-md font-semibold hover:bg-orange-400">Få en
+                        class="bg-secondary text-gray-800 px-8 py-3 rounded-md font-semibold hover:bg-orange-400 text-center">Få en
                         gratis offert</a>
                     <a href="#services"
-                        class="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-primary">Våra
+                        class="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-primary text-center">Våra
                         tjänster</a>
                 </div>
             </div>
@@ -448,6 +561,32 @@
             </div>
         </div>
     </footer>
+
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const overlay = document.querySelector('.mobile-overlay');
+            const menuLinks = document.querySelectorAll('.mobile-menu a');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+            }
+
+            // Toggle menu on button click
+            menuButton.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking overlay
+            overlay.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking a link
+            menuLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+        });
+    </script>
 </body>
 
 </html>
